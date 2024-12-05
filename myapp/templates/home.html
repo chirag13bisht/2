@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2 Month Anniversary</title>
+    <style>
+        /* Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("{% static 'images/istockphoto-1191251531-612x612.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Heading Styles */
+        h1 {
+            font-size: 2rem;
+            color: red;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Paragraph Style */
+        p {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button Styles */
+        .btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #FF5733; /* Bright color for primary button */
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #C04E2A; /* Darker shade on hover */
+            transform: scale(1.05); /* Subtle zoom on hover */
+        }
+
+        .btn-secondary {
+            background-color: #28a745; /* Green color for secondary button */
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: scale(1.05); /* Subtle zoom on hover */
+        }
+
+        /* Container for Buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Happy 2 Month Anniversary!</h1>
+        <p>Celebrating this special moment with you.</p>
+        <div class="button-container">
+            <!-- Updated to use links -->
+            <a href="{% url 'memories' %}" class="btn btn-primary">Memories</a>
+            <a href="#" class="btn btn-secondary">Shayari's for you</a>
+        </div>
+    </div>
+</body>
+</html>

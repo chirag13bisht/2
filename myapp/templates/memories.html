@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'images/istockphoto-1191251531-612x612.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: red;
+            font-size: 2.5rem;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly stronger transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .form-container input[type="file"],
+        .form-container input[type="date"],
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .memories-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center; /* Centers content horizontally */
+        }
+        .memory-item {
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Stronger transparency */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+        .memory-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .memory-item p {
+            margin-top: 10px;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            .memories-container {
+                gap: 15px;
+            }
+            .memory-item {
+                max-width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .memory-item {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Memories</h1>
+
+    <div class="memories-container">
+        {% for memory in memories %}
+            <div class="memory-item">
+                <img src="{{ memory.photo.url }}" alt="Memory">
+                <p>Date: {{ memory.date }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
